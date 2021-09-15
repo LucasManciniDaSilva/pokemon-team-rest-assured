@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "teamName": {
+      "type": "string"
+    },
+    "firstPokemon": {
+      "type": "string"
+    },
+    "secondPokemon": {
+      "type": "string"
+    },
+    "thirdPokemon": {
+      "type": "string"
+    },
+    "fourthPokemon": {
+      "type": "string"
+    },
+    "fifthPokemon": {
+      "type": "string"
+    },
+    "lastPokemon": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "teamName",
+    "firstPokemon",
+    "secondPokemon",
+    "thirdPokemon",
+    "fourthPokemon",
+    "fifthPokemon",
+    "lastPokemon"
+  ]
+}
