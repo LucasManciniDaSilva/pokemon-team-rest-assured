@@ -6,8 +6,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.qameta.allure.Allure;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +31,7 @@ public class CT001Steps extends ValidationUtil {
 
   private String statusCodeResponse;
 
-  private  Map<String, Object> requestBody;
+  private Map<String, Object> requestBody = new HashMap<>();
 
   private final Faker faker = new Faker();
 
@@ -41,12 +39,11 @@ public class CT001Steps extends ValidationUtil {
     this.teamResource = teamResource;
   }
 
-  @Given("I perform a POST request for {string} to create a new Pokemon team")
-  public void IPerformAPostRequestForTeamToCreateANewPokemonTeam(String path){
+  @Given("I perform a POST request for {string} to create a Pokemon Team")
+  public void IPerformAPostRequestForTeamToCreateAPokemonTeam(String path){
 
     requestTeamName = faker.name().username();
 
-    requestBody = new HashMap<>();
     requestBody.put("teamName", requestTeamName);
     requestBody.put("firstPokemon", "Squirtle");
     requestBody.put("secondPokemon", "Bulbasaur");

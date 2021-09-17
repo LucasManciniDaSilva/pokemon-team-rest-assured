@@ -25,4 +25,8 @@ public final class PropertiesUtils {
   public static String extractPokemonHost() {
     return getString("pokemon_host");
   }
+
+  public static String extractPokemonTeamName() {
+    return getString("pokemon_team_name");
+  }
 }
