@@ -35,7 +35,7 @@ public class TeamResource {
     return pokemonResponseDatas;
   }
 
-  public JsonPath postPokemonTeamAlreadyExists(String host, String path, Map<String, Object> requestBody, Integer statusCode){
+  public JsonPath postPokemonError(String host, String path, Map<String, Object> requestBody, Integer statusCode){
 
     Response response = given()
         .contentType("application/json")

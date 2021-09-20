@@ -1,5 +1,6 @@
 package utils;
 
+import io.restassured.path.json.JsonPath;
 import lombok.NonNull;
 import lombok.SneakyThrows;
 import org.apache.commons.configuration.Configuration;

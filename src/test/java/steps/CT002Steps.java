@@ -23,9 +23,9 @@ public class CT002Steps extends ValidationUtil {
 
   private static final Integer STATUS_CODE_UNPROCESSABLE_ENTITY = 422;
 
-  private final String requestTeamName = PropertiesUtils.extractPokemonTeamName();
-
   private JsonPath pokemonTeamResponse;
+
+  private final String requestTeamName = PropertiesUtils.extractPokemonTeamName();
 
   private Map<String, Object> requestBody = new HashMap<>();
 
@@ -45,12 +45,10 @@ public class CT002Steps extends ValidationUtil {
     requestBody.put("lastPokemon", "Rayquaza");
 
     pokemonTeamResponse =
-        teamResource.postPokemonTeamAlreadyExists(
+        teamResource.postPokemonError(
             pokemonHost, path, requestBody, STATUS_CODE_UNPROCESSABLE_ENTITY);
 
     Allure.addAttachment("Request Body", requestBody.toString());
-
-    logger.info("Check Response Message" + pokemonTeamResponse.prettify());
   }
 
   @Then("Verify if returning the message {string} and response code {string}")
@@ -62,3 +60,4 @@ public class CT002Steps extends ValidationUtil {
     Allure.addAttachment("Response Message", pokemonTeamResponse.prettify());
   }
 }
+
